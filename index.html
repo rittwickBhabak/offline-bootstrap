@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <link rel='stylesheet' href='css/bootstrap.css'>
+    <link rel="shortcut icon" href="data/icon.jpg" type="image/x-icon">
+    <title>Bootstrap Offline</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        *::-webkit-scrollbar {
+            width: 0 !important
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="">Bootstrap Offline</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="https://getbootstrap.com/" target="_blank">Official Website</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="svgicons.html" target="_blank">ICONS</a>
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0"> 
+                <input class="form-control mr-sm-2" type="search" id="search" placeholder="Search" aria-label="Search">
+
+            </form>
+        </div>
+    </nav>
+
+    
+        <div class="container text-center my-3" id="searchDiv">
+            <h1>Search Results</h1>
+            <div class="row" id="searchResults"></div>
+        </div>
+    
+
+    <!-- Butification starts from here -->
+
+    <div class="container my-3">
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingLayout">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseLayout" aria-expanded="false" aria-controls="collapseLayout">
+                            Layout
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseLayout" class="collapse" aria-labelledby="headingLayout"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="row" id="layout"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingContent">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseContent" aria-expanded="false" aria-controls="collapseContent">
+                            Content
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseContent" class="collapse" aria-labelledby="headingContent"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="row" id="content"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingComponents">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse"
+                            data-target="#collapseComponents" aria-expanded="true" aria-controls="collapseComponents">
+                            Components
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseComponents" class="collapse" aria-labelledby="headingComponents"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="row" id="components"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingUtilities">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse"
+                            data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                            Utilities
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="row" id="utilities"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingExtend">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseExtend"
+                            aria-expanded="true" aria-controls="collapseExtend">
+                            Extend
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseExtend" class="collapse" aria-labelledby="headingExtend"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="row" id="extend"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingExample">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseExample"
+                            aria-expanded="true" aria-controls="collapseExample">
+                            Example
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseExample" class="collapse" aria-labelledby="headingExample"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="card-deck" id="example"></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+    <!-- Butification ends here -->
+
+    <script src='js/jQuery.js'></script>
+    <script src='js/bootstrap.js'></script>
+    <script>
+    </script>
+    <script>
+        document.getElementById('searchDiv').style.display = "none";
+        $('#search').focus();
+
+        let layoutList = document.getElementById('layout');
+        let layoutLinks = ['Overview', 'Grid system', 'Utilities for layout']
+
+        let componentsList = document.getElementById('components');
+        let componentsLinks = ['Alerts', 'Badges', 'Breadcrumb', 'Buttons', 'Button group', 'Cards', 'Carousel', 'Collapse', 'Dropdowns', 'Forms', 'Input group', 'Jumbotron', 'List group', 'Media object', 'Modal', 'Navs', 'Navbar', 'Pagination', 'Popovers', 'Progress', 'Scrollspy', 'Spinners', 'Toasts', 'Tooltips'];
+
+        let contentList = document.getElementById('content');
+        let contentLink = ['Reboot', 'Typography', 'Code', 'Images', 'Tables', 'Figures'];
+
+        let utilitiesList = document.getElementById('utilities');
+        let utilitiesLink = ['Borders', 'Clearfix', 'Close icon', 'Colors', 'Display property', 'Embeds', 'Flex', 'Float', 'Image replacement', 'Overflow', 'Position', 'Screen readers', 'Shadows', 'Sizing', 'Spacing', 'Stretched link', 'Text', 'Vertical alignment', 'Visibility'];
+
+        let extendList = document.getElementById('extend');
+        let extendLink = ['Approach', 'Icons'];
+
+        let exampleList = document.getElementById('example');
+        let exampleLink = {
+            "Album": "album.png",
+            "Pricing": "pricing.png",
+            "Checkout": "checkout.png",
+            "Product": "product.png",
+            "Dashboard Template": "dashboard.png",
+            "Blog Template": "blog.png",
+            "Crousel Template": "carousel.png",
+            "Cover Template": "cover.png",
+            "Signin Template": "sign-in.png",
+            "Sticky Footer Template": "sticky-footer.png",
+            "Sticky Footer Navbar Template": "sticky-footer-navbar.png",
+            "Starter Template": "starter-template.png",
+            "Grid Template": "grid.png",
+            "Jumbotron Template":"jumbotron.png",
+            "Navbar Template": 'navbars.png',
+            "Top navbar": "navbar-static.png",
+            "Fixed top navbar": "navbar-fixed.png",
+            "Bottom navbar": "navbar-bottom.png",
+            "Floating labels": "floating-labels.png",
+            "Offcanvas template": "offcanvas.png"
+        }
+
+        function appendItems(listOfLinks, parent) {
+            for (link of listOfLinks) {
+                let new_link = document.createElement('div');
+                new_link.className = "col-sm-6 col-md-4 col-lg-3 my-3"
+                new_link.innerHTML = `
+                                    <div class="card text-center">
+                                        <div class="card-body">
+                                        <h5 class="card-title">${link}</h5>
+                                        <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                                        <a href="${'data/'+link + ' · Bootstrap.html'}" class="btn btn-primary btn-block" target="_blank">Open</a>
+                                        </div>
+                                    </div>
+                                    `;
+                parent.appendChild(new_link);
+            }
+        }
+        function specialForExample(links, parent) {
+            for (key in links) {
+                let new_link = document.createElement('div');
+                new_link.className = "col-sm-6 col-md-4 col-lg-4 my-3";
+                new_link.innerHTML = `  <div class="card">
+                                            <img src="${'data/'+links[key]}" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><a href="${'data/'+key+' example · Bootstrap.html'}" target="_blank">${key}</a></h5>
+                                            </div>
+                                        </div>`
+                parent.appendChild(new_link);
+            }
+        }
+
+        appendItems(componentsLinks, componentsList)
+        appendItems(layoutLinks, layoutList)
+        appendItems(contentLink, contentList)
+        appendItems(utilitiesLink, utilitiesList)
+        appendItems(extendLink, extendList);
+        specialForExample(exampleLink, exampleList);
+
+
+        //Search functionality
+        let list1 = [];
+        list1 = list1.concat(componentsLinks);
+        list1 = list1.concat(layoutLinks);
+        list1 = list1.concat(contentLink);
+        list1 = list1.concat(utilitiesLink);
+        list1 = list1.concat(extendLink);
+        let list2 = function(){let arr=[];for(key in exampleLink){arr.push(key)}return arr;}();
+        let search = document.getElementById('search');
+        search.addEventListener('keyup', (e)=>{
+            let check = e.target.value.replace(/\s/g,'');
+            let result1 = [];
+            let result2 = [];
+            if(check.length!=0){
+                let searchTerms = e.target.value.split(' ');
+                for(searchTerm of searchTerms){
+                    for(item of list1){
+                        if(item.toLowerCase().includes(searchTerm.toLowerCase())){
+                            result1.push(item);
+                        }
+                    }
+                    for(item of list2){
+                        if(item.toLowerCase().includes(searchTerm.toLowerCase())){
+                            result2.push(item);
+                        }
+                    }
+                }
+            }
+            
+            let searchResults = document.getElementById('searchResults');
+            let html = '';
+            for(item of result1){
+                html += `
+                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                    <div class="card text-center">
+                        <div class="card-body">
+                        <h5 class="card-title">${item}</h5>
+                        <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                        <a href="${'data/'+item + ' · Bootstrap.html'}" class="btn btn-primary btn-block" target="_blank">Open</a>
+                        </div>
+                    </div>
+                </div>`;
+            }
+            for(item of result2){
+               html += `
+                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                    <div class="card text-center">
+                        <div class="card-body">
+                        <h5 class="card-title">${item}</h5>
+                        <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                        <a href="${"data/"+item+' example · Bootstrap.html'}" class="btn btn-primary btn-block" target="_blank">Open</a>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }
+            let length = result1.length + result2.length;
+            if(length==0){
+                document.getElementById('searchDiv').style.display = "none";
+            }
+            else{
+                document.getElementById('searchDiv').style.display = "block";
+            }
+            document.getElementById('searchResults').innerHTML = html;            
+        })
+    </script>
+</body>
+
+</html>
